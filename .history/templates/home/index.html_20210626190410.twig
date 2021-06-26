@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+{{%{% if app.user %}{% endif %}
+%}}
+	<h1></h1>
+	<div class="card">
+		<div class="card-body">
+			Bonjour
+			{{ app.user.firstName }}
+		</div>
+	</div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+	{% if app.user %}
+
+		<div class="card">
+			<div class="card-body">
+				Bonjour
+				{{app.user.firstName}}
+			</div>
+		</div>
+	{% endif %}
+
+{% else %}
+	<div class="card" style="width: 18rem;">
+		<div class="card-body">
+			<h5 class="card-title">Website</h5>
+			<p class="card-text">Pour utiliser les fonctionnalités ud site, veuillez-vous identifié ou vous inscrire !</p>
+			<a href="{{path('app_login')}}" class="card-link">Connexion</a>
+			<a href="{{path('app_register')}}" class="card-link">Inscription</a>
+		</div>
+	</div>
+{% endblock %}
