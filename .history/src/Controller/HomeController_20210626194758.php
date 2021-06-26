@@ -2,10 +2,9 @@
 
 namespace App\Controller;
 
-use App\Service\CallApiService;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class HomeController extends AbstractController
 {
@@ -15,7 +14,7 @@ class HomeController extends AbstractController
     public function index(CallApiService $callApiService): Response
     {
         return $this->render('home/index.html.twig', [
-            'data' => $callApiService->getQuoteData(),
+            'controller_name' => 'HomeController',
         ]);
     }
 }
